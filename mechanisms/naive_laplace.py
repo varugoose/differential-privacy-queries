@@ -2,10 +2,7 @@ import numpy as np
 from .base_mechanism import BaseMechanism
 
 class NaiveLaplace(BaseMechanism):
-    """Naive Laplace composition - split epsilon equally"""
-    
     def answer_queries(self, data, queries):
-        """Answer queries by splitting epsilon equally"""
         n_queries = len(queries)
         epsilon_per_query = self.epsilon_total / n_queries
         

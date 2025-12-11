@@ -13,7 +13,6 @@ class ExperimentRunner:
     def run_comparison(self, n_queries_list=[10, 20, 30, 50], 
                        epsilon_values=[0.1, 0.5, 1.0, 2.0, 5.0],
                        n_trials=100):
-        """Run comprehensive comparison of all mechanisms"""
         results = {
             'naive': {},
             'advanced': {},
@@ -71,7 +70,6 @@ class ExperimentRunner:
         return results
     
     def run_scalability_test(self, epsilon=1.0, max_queries=100):
-        """Test how methods scale with number of queries"""
         query_counts = list(range(5, max_queries + 1, 5))
         results = {
             'naive': [],

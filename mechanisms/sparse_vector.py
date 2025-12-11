@@ -2,14 +2,11 @@ import numpy as np
 from .base_mechanism import BaseMechanism
 
 class SparseVectorTechnique(BaseMechanism):
-    """Sparse Vector Technique for threshold queries"""
-    
     def __init__(self, epsilon_total, delta=1e-5, threshold=40):
         super().__init__(epsilon_total, delta)
         self.threshold = threshold
         
     def answer_queries(self, data, queries):
-        """Answer threshold queries using SVT"""
         # Split epsilon: half for threshold, half for queries
         epsilon_threshold = self.epsilon_total / 3
         epsilon_queries = 2 * self.epsilon_total / 3
@@ -20,7 +17,7 @@ class SparseVectorTechnique(BaseMechanism):
         results = []
         true_answers = []
         num_above = 0
-        max_above = 10  # Limit number of "above" answers
+        max_above = 10  
         
         for query_func, query_type in queries:
             # Get true answer

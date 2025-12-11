@@ -1,7 +1,3 @@
-"""
-Main execution script for differential privacy query optimization project
-"""
-
 import numpy as np
 import pandas as pd
 from pathlib import Path

@@ -2,14 +2,11 @@ import numpy as np
 from .base_mechanism import BaseMechanism
 
 class AdvancedComposition(BaseMechanism):
-    """Advanced composition using Gaussian mechanism"""
-    
     def answer_queries(self, data, queries):
         """Use advanced composition theorem with Gaussian noise"""
         n_queries = len(queries)
         
-        # Advanced composition: better epsilon allocation
-        # For k queries, we can use ε/√(2k ln(1/δ)) per query
+        # Advanced composition: For k queries, we can use ε/√(2k ln(1/δ)) per query
         epsilon_per_query = self.epsilon_total / np.sqrt(2 * n_queries * np.log(1/self.delta))
         
         results = []

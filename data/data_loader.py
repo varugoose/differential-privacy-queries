@@ -7,7 +7,7 @@ class DataLoader:
         self.data_dir = Path(__file__).parent
         
     def load_adult_dataset(self):
-        """Load UCI Adult dataset"""
+        # Load UCI Adult dataset
         url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data'
         
         columns = ['age', 'workclass', 'fnlwgt', 'education', 'education_num',
@@ -30,7 +30,6 @@ class DataLoader:
         return data
     
     def generate_synthetic_data(self, n_records=10000):
-        """Generate synthetic data with known correlations"""
         np.random.seed(42)
         
         # Base age distribution
