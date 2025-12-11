@@ -3,7 +3,6 @@ from .base_mechanism import BaseMechanism
 
 class AdvancedComposition(BaseMechanism):
     def answer_queries(self, data, queries):
-        """Use advanced composition theorem with Gaussian noise"""
         n_queries = len(queries)
         
         # Advanced composition: For k queries, we can use ε/√(2k ln(1/δ)) per query
